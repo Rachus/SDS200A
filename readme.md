@@ -13,7 +13,7 @@ We provide the following documents:
 
 * [Configurations](configurations.md): What to send to the device to configure it. You can also find the [typical startup sequence](configurations.md#typical-startup-sequence) there.
 * [Data format](dataformat.md): How to interpret the data that the device returns in a bulk request.
-* [Reading EEPROM](read_devicedata.md): The device has an internal EEPROM that can be read.
+* [Reading EEPROM](devicedata.md): The device has an internal EEPROM that can be read.
 
 ## Library
 

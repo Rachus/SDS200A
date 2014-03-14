@@ -8,7 +8,7 @@ The collected traces of the device's communication with the SoftScope2 software 
 
 1. [Reset](#reset) the device
 2. [Reset relays](#relays---attenuation-and-coupling)
-3. *Optional:* Read [eeprom data](read_devicedata.md#0xc7---read-from-eeprom) and use [0xc5](./read_devicedata.md#0x5---unknown)
+3. *Optional:* Read [eeprom data](devicedata.md#0xc7---read-from-eeprom) and use [0xc5](devicedata.md#0x5---unknown)
 4. [Reset](#reset) the device (sic!)
 5. [Set relays](#relays---attenuation-and-coupling)
 6. Set the [calibration](lib/readme.md#calibration) [offset](#offset)
