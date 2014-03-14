@@ -2,7 +2,7 @@
 
 The device is configured using control transfers.
 
-## Typical request sequence
+## Typical startup sequence
 
 The collected traces of the device's communication with the SoftScope2 software under Windows along with experimentation suggests the following steps to communicate with the device
 
