@@ -5,20 +5,18 @@ Data is received from the device through polling and read using USB Bulk transfe
 
 To determine, whether new data is available the vendor-specific 0xc0 control-request is used:
 
-|------------+---------------+----------+--------+--------+---------|
 | Type       | bmRequestType | bRequest | wValue | wIndex | wLength |
-|------------+---------------+----------+--------+--------+---------|
+|------------|---------------|----------|--------|--------|---------|
 | Control In | 0xc0          | 0xc0     | 0x0    | 0x0    |       1 |
-|------------+---------------+----------+--------+--------+---------|
 
 The returned value indicates how much information is available to be read (most likely in terms of bulk transfers, more on that later). A value > 0 means that new data is available.
 
 If (and only if) the 0xc0-request indicated that information is available, data can be read via bulk read. Note that bulk-reads will otherwise timeout. The bulk-in is of the following format:
-|---------+----------+-----------|
+
 | Type    | Endpoint | Size      |
-|---------+----------+-----------|
+|---------|----------|-----------|
 | Bulk in | 0x82     | see below |
-|---------+----------+-----------|
+
 The "size"-parameter seems to be linked to the current time/div setting. The Windows-Software that ships with the device uses more, smaller bulk reads for smaller time/div-values. As the size parameter is not communicated to the device, the matching settings have to be used.
 
 TODO: list values here
@@ -66,7 +64,7 @@ A sample should be valid, if the first bit of the second byte is set:
 	 Mask:          0x80
 ```
 
-However there are sporadical samples of the following style:
+However there are sporadic samples of the following style:
 ```
 		   11111111 11111111
 ```
@@ -76,5 +74,8 @@ The fix for this that worked for as was to declare samples as invalid, if BB is 
 		   00000000 00BB0000
 	 Mask:          0x30
 ```
-The best guess seems to be that those samples represent the the `RIS_MISSING` values talked about in the [SDK Users Guide](http://www.softdsp.com/BIBoard/list.php?id=eng_download)
+The best guess seems to be that those samples represent the `RIS_MISSING` values talked about in the [SDK Users Guide](http://www.softdsp.com/BIBoard/list.php?id=eng_download)
 > "If RAW_DATA holds the value of [...] 1024 (for SDS 200A), these imply the special value as RIS_MISSING."
+
+### Trigger event
+The SoftScope2 GUI provides the ability to mark the trigger event in the traces. This mark should be visible in the data returned by the device, but which bit is responsible is yet to be determined.
