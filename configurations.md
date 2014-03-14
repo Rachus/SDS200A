@@ -27,7 +27,9 @@ If you look at the semantics available via FCC (see [resources](resources.md)), 
 | Control out | 0x40          | 0xb5     |      0 |      0 |       1 | payload |
 
 The payload can be used to enable/disable the relays separately. Under Windows, the "SoftScope2" software sends two `0xb5`-requests per relay to set.
+
 The first request ships the actual payload, the second request "flushes" the value.
+
 *Important:* The software has to sleep between sending those requests, as the sds200a needs some time to apply the payload, and the `0x00` send afterwards overwrites this setting.
 
 | Type        | bmRequestType | bRequest | wValue | wIndex | wLength | Data    |
@@ -38,8 +40,8 @@ The first request ships the actual payload, the second request "flushes" the val
 The payload uses bitflags to activate or deactivate the relays.
 
 ### activating relays
-To activate relay x, one sends a `b5`-request with the x-bit set.
-E.g. to set relay 5, the corresponding requests would be:
+To activate relay x, one sends a `b5`-request with the x-bit set,
+e.g. to set relay 5, the corresponding requests would be:
 
 | Type        | bmRequestType | bRequest | wValue | wIndex | wLength | Data    |
 |-------------|---------------|----------|--------|--------|---------|---------|
@@ -48,8 +50,8 @@ E.g. to set relay 5, the corresponding requests would be:
 
 where `0x10` == `0b00010000`
 
-To unset the relay, the inverted mask has to be send. 
-E.g. to reset relay 5, the corresponding requests would be:
+To unset the relay, the inverted mask has to be send,
+e.g. to reset relay 5, the corresponding requests would be:
 
 | Type        | bmRequestType | bRequest | wValue | wIndex | wLength | Data    |
 |-------------|---------------|----------|--------|--------|---------|---------|
