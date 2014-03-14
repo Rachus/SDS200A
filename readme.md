@@ -21,5 +21,5 @@ An unfinished driver implementation can be found in the lib directory. The sourc
 
 ## Tools
 
-The tools directory contains tools we wrote for reverse engineering. A short description for every tool can [also be found](tools/readme.md).
+The tools directory contains tools we wrote for reverse engineering. A short description for every tool can [be found here](tools/readme.md).
 

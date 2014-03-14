@@ -17,9 +17,7 @@ If (and only if) the 0xc0-request indicated that information is available, data 
 |---------|----------|-----------|
 | Bulk in | 0x82     | see below |
 
-The "size"-parameter seems to be linked to the current time/div setting. The Windows-Software that ships with the device uses more, smaller bulk reads for smaller time/div-values. As the size parameter is not communicated to the device, the matching settings have to be used.
-
-TODO: list values here
+The "size"-parameter seems to be linked to the current time/div setting. As the size parameter is not communicated to the device, the matching settings have to be used, the values range from 64 byte to 20096 byte, but do not necessarily follow a distinct pattern. One might want to experiment with other values there.
 
 ## Data format
 
