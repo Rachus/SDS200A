@@ -46,7 +46,7 @@ E.g. to set relay 5, the corresponding requests would be:
 | Control out | 0x40          | 0xb5     |      0 |      0 |       1 |    0x10 |
 | Control out | 0x40          | 0xb5     |      0 |      0 |       1 |    0x00 |
 
-where 0x10 == 0b00010000
+where `0x10` == `0b00010000`
 
 To unset the relay, the inverted mask has to be send. 
 E.g. to reset relay 5, the corresponding requests would be:
@@ -56,7 +56,7 @@ E.g. to reset relay 5, the corresponding requests would be:
 | Control out | 0x40          | 0xb5     |      0 |      0 |       1 |    0x10 |
 | Control out | 0x40          | 0xb5     |      0 |      0 |       1 |    0x00 |
 
-where 0x10 == 0b11101111
+where `0x10` == `0b11101111`
 
 ### Relay functions
 #### Channel 1:
