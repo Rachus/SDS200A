@@ -37,10 +37,12 @@ The first request ships the actual payload, the second request "flushes" the val
 
 The payload uses bitflags to activate or deactivate the relays.
 
-### activating arrays
+### activating relays
 To activate relay x, one sends a `b5`-request with the x-bit set.
 E.g. to set relay 5, the corresponding requests would be:
 
+| Type        | bmRequestType | bRequest | wValue | wIndex | wLength | Data    |
+|-------------|---------------|----------|--------|--------|---------|---------|
 | Control out | 0x40          | 0xb5     |      0 |      0 |       1 |    0x10 |
 | Control out | 0x40          | 0xb5     |      0 |      0 |       1 |    0x00 |
 
@@ -49,6 +51,8 @@ where 0x10 == 0b00010000
 To unset the relay, the inverted mask has to be send. 
 E.g. to reset relay 5, the corresponding requests would be:
 
+| Type        | bmRequestType | bRequest | wValue | wIndex | wLength | Data    |
+|-------------|---------------|----------|--------|--------|---------|---------|
 | Control out | 0x40          | 0xb5     |      0 |      0 |       1 |    0x10 |
 | Control out | 0x40          | 0xb5     |      0 |      0 |       1 |    0x00 |
 
@@ -114,6 +118,7 @@ To us, there was no clear structure in the time/div part of the statusword (mayb
 | 10s      | 2e010000 00001000 00000500 00000000 000000a0 01 |
 
 The requests have the following structure:
+
 | Type        | bmRequestType | bRequest | wValue | wIndex | wLength | Data       |
 |-------------|---------------|----------|--------|--------|---------|------------|
 | Control out | 0x40          | 0xb1     |      0 |      0 |      21 | statusword |
