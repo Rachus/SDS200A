@@ -12,7 +12,7 @@ Structure:
 
 This seems to dump data form the eeprom at address `address`. The software requests the address-range `0x1c00` to `0x1f80` in 64 byte chunks.
 
-The very regular structure of the read data hints that this data describes the devices calibration data. For more information on the device's calibration-settings, see [calibration](./calibration.md).
+The very regular structure of the read data hints that this data describes the devices calibration data. For more information on the device's calibration-settings, see [calibration](calibration.md).
 
 An example of the data transferred can be seen below:
 

@@ -36,7 +36,7 @@ There structure and interpretation of the first eight bytes are unknown as time 
 
 ### Measurement data
 Each measurement (marked DATA above) is encoded using two bytes.
-The actual data measurement-data is the raw 10bit unsigned value (most likely this is the raw value returned from the device's A/D-converter, which provides 10bit-values, see [docs](./resources.md)).
+The actual data measurement-data is the raw 10bit unsigned value (most likely this is the raw value returned from the device's A/D-converter, which provides 10bit-values, see [docs](resources.md)).
 
 ```
 		   Low      High
