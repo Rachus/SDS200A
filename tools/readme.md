@@ -21,9 +21,7 @@ following lines. It only works with lines that have the same length.
 
 This tool converts a pcap file to a (broken!) mon file. It requires the
 pcap file as only argument and prints the mon file to stdout. We used it
-to diff usb traces with vusb-analyzer[1].
-
-[1]: http://vusb-analyzer.sourceforge.net/
+to diff usb traces with [vusb-analyzer](http://vusb-analyzer.sourceforge.net/).
 
 ## pcap2python
 
