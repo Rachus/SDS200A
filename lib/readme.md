@@ -7,13 +7,15 @@ will help someone with this device.
 
 ## General Aspects
 
-For the communication with the device the library uses libusb[1] 1.0.
+For the communication with the device the library uses [libusb](http://libusb.org) 1.0.
 Every non void function returns a sds_error which is a typedef around
 an enum. To return values the functions expect pointers to the variable
 to store the values in there. A example file (for the current state of
 the project) shows the intended usage.
 
-[1]: http://libusb.org
+The simple Makefile supports the following targets (next to all and clean):
+* `example`: Build the example
+* `doc`: Create a doxygen (html) documentation
 
 ## Device Opening
 
