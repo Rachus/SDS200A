@@ -20,7 +20,7 @@ The collected traces of the device's communication with the SoftScope2 software 
 
 
 ## Relays - Attenuation and Coupling
-If you look at the semantics available via FCC (see [resources](./resources.md)), the device possesses six relays, three per channel. Those relays are responsible for the *Attenuation* and *Coupling* settings of the device. Those relays can be set via the `0xb5` control requests:
+If you look at the semantics available via FCC (see [resources](resources.md)), the device possesses six relays, three per channel. Those relays are responsible for the *Attenuation* and *Coupling* settings of the device. Those relays can be set via the `0xb5` control requests:
 
 | Type        | bmRequestType | bRequest | wValue | wIndex | wLength | Data    |
 |-------------|---------------|----------|--------|--------|---------|---------|
