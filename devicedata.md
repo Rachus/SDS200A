@@ -4,11 +4,11 @@ During device-initialisation the SoftScope2-Software, which comes bundled with t
 
 ## 0xc7 - read from eeprom
 Structure:
-|------------+---------------+----------+---------+--------+---------|
+
 | Type       | bmRequestType | bRequest | wValue  | wIndex | wLength |
-|------------+---------------+----------+---------+--------+---------|
+|------------|---------------|----------|---------|--------|---------|
 | Control In | 0xc0          | 0xc7     | address | 0x0    |      64 |
-|------------+---------------+----------+---------+--------+---------|
+
 
 This seems to dump data form the eeprom at address `address`. The software requests the address-range `0x1c00` to `0x1f80` in 64 byte chunks.
 
@@ -33,12 +33,10 @@ def readEepromMemory(dev):
 # 0xc5 - Unknown
 
 Immediately after the Eeprom-memory has been read, "Softscope2" requests one additional byte. 
-```
-|------------+---------------+----------+--------+--------+---------|
+
 | Type       | bmRequestType | bRequest | wValue | wIndex | wLength |
-|------------+---------------+----------+--------+--------+---------|
+|------------|---------------|----------|--------|--------|---------|
 | Control In | 0xc0          | 0xc5     | 0x0    | 0x0    |       1 |
-|------------+---------------+----------+--------+--------+---------|
-```
+
 
 During our tests, the value transferred has always been `2`
