@@ -4,7 +4,7 @@ The device is configured using control transfers.
 
 ## Typical startup sequence
 
-The collected traces of the device's communication with the SoftScope2 software under Windows along with experimentation suggests the following steps to communicate with the device
+The gathered traces of the device's communication with the SoftScope2 software under Windows along with experimentation suggests the following steps for communicating with the device
 
 1. [Reset](#reset) the device
 2. [Reset relays](#relays---attenuation-and-coupling)
@@ -20,7 +20,7 @@ The collected traces of the device's communication with the SoftScope2 software 
 
 
 ## Relays - Attenuation and Coupling
-If you look at the semantics available via FCC (see [resources](resources.md)), the device possesses six relays, three per channel. Those relays are responsible for the *Attenuation* and *Coupling* settings of the device. Those relays can be set via the `0xb5` control requests:
+If you look at the schematics available via FCC (see [resources](resources.md)), the device possesses six relays, three per channel. Those relays are responsible for the *Attenuation* and *Coupling* settings of the device. Those relays can be set via the `0xb5` control requests:
 
 | Type        | bmRequestType | bRequest | wValue | wIndex | wLength | Data    |
 |-------------|---------------|----------|--------|--------|---------|---------|
@@ -78,11 +78,11 @@ where `0x10` == `0b11101111`
 ## Time/div
 
 The SDS200A has two request with the codes `0xb1` and `0xb3`.
-Those two values use some sort of statusword that is transferred to the device and which is responsible for at least the time/div and the trigger settings.
+Those two values use some sort of status word which is transferred to the device and which is responsible for at least the time/div and the trigger settings.
 
 Even though both requests use the same statusword, `0xb3` seems to be responsible for the time/div setting and the `0xb1` request for the trigger setting.
 
-To us, there was no clear structure in the time/div part of the statusword (maybe this word is used to actually drive an internal circuit), so the viable approach is to use the lookuptable below for each time/div and apply the modifications for the triggersettings afterwards.
+There was no clear structure in the time/div part of the statusword (maybe this word is used to actually drive an internal circuit) to us, so the viable approach is to use the lookuptable below for each time/div and apply the modifications for the triggersettings afterwards.
 
 *Note:* As it seems, one wants to send the same word to `0xb3` and `0xb1` for the device to apply the configuration
 
@@ -196,7 +196,7 @@ It seems that a request of type `0xd0` resets the oscilloscope. The Softscope so
 
 The traces also had some requests that couldn't be affiliated to any
 functionality of the device:
-* `0xb6`: Occurs seldom
+* `0xb6`: Occurs rarely
 * `0xb4`: Occurs more often but sending different values did not change the
           behaviour of the device. It has one byte of payload.
 
