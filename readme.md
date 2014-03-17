@@ -4,7 +4,7 @@ Here you can find remains of an attempt of trying to reverse engineer the Softsc
 
 ## Driver
 
-An incomplete driver implementation can be found in the lib directory. The source code should be documented very well. Additionally you can find a [small documentation](lib/readme.md) here.
+An incomplete driver implementation can be found in the lib directory. The source code should be documented very well. It can be used under the terms of the [GPL](https://www.gnu.org/copyleft/gpl.html). Additionally you can find a [small documentation](lib/readme.md) here.
 
 ## Documentation
 
@@ -18,5 +18,5 @@ We provide the following documents:
 
 ## Tools
 
-The tools directory contains tools we wrote for reverse engineering. A short description for every tool can [be found here](tools/readme.md).
+The tools directory contains tools we wrote for reverse engineering. A short description for every tool can [be found here](tools/readme.md). You may use them under the terms of the [GPL](https://www.gnu.org/copyleft/gpl.html), too.
 
