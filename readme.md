@@ -1,10 +1,21 @@
 # SDS 200A
 
-Here you can find remains of an attempt of trying to reverse engineer the Softscope SDS 200A oscilloscope. This repository consists of a driver which is far from being finished, the tools we used to understand the usb transfers, and a documentation about what we already have or have not found out.
+Here you can find an attempt of trying to reverse engineer the Softscope SDS 200A oscilloscope for Linux. This repository consists a first version of a driver, the tools we used to understand the usb transfers, and a documentation about what we already have or have not found out.
+
+The driver already supports the following features:
+
+* Reset the device
+* Read eeprom data
+* Set relays
+* Set voltage offsets
+* Set tigger offsets
+* Acquire data
+
 
 ## Driver
 
 An incomplete driver implementation can be found in the lib directory. The source code should be documented very well. It can be used under the terms of the [GPL](https://www.gnu.org/copyleft/gpl.html). Additionally you can find a [small documentation](lib/readme.md) here.
+
 
 ## Documentation
 
